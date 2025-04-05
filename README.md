@@ -1,74 +1,131 @@
-Task Manager Frontend
-Setup
-Frontend README (frontend/README.md)
-# Task Manager Frontend
+📋 Task Manager Application
+This is a full-stack Task Manager application built with React (TypeScript) on the frontend and Node.js + Express + PostgreSQL (TypeScript) on the backend. It allows users to register, log in, and manage their tasks with a clean and intuitive UI.
 
-This is the frontend for the Task Manager application built with React and TypeScript. It provides a user interface for registration, login, and managing tasks.
+🖥️ Frontend (React + TypeScript)
+Features
+User Registration & Login
 
-## Prerequisites
+Create, Update, and Delete Tasks
 
-- [Node.js](https://nodejs.org/) (v14+ recommended)
-- [npm](https://www.npmjs.com/)
+Responsive and clean UI
 
-## Setup
-
-1. **Clone the Repository and Navigate to the Frontend Folder**
-
-   ```bash
-   git clone <your-repo-url>
-   cd project-root/frontend
-   npm install
-
-.env -REACT_APP_API_URL=http://localhost:5000
-
-
-Task Manager Backend
-This is the backend for the Task Manager application built with Node.js, TypeScript, Express, and PostgreSQL. It provides user authentication (registration and login) and CRUD endpoints for managing tasks.
-
-Table of Contents
 Prerequisites
-Setup
-Clone and Install Dependencies
-Environment Variables
-Database Setup
-Running the Server
-API Endpoints
-Troubleshooting
-Notes
-Prerequisites
-Node.js (v14 or higher recommended)
+Node.js (v14+ recommended)
+
 npm
-PostgreSQL installed and running
-(Ensure the PostgreSQL bin directory is in your system's PATH so you can run psql)
-Setup
-Clone and Install Dependencies
-Clone the repository (replace <your-repo-url> with the actual URL):
 
+Setup Instructions
+Clone the Repository and Navigate to the Frontend Folder
+
+bash
+Copy
+Edit
 git clone <your-repo-url>
-cd project-root/backend
+cd project-root/frontend
+Install Dependencies
+
+bash
+Copy
+Edit
 npm install
+Set Environment Variables Create a .env file in the frontend directory with the following:
 
-.env-PORT=5000 DATABASE_URL=postgres://postgres:Harshith%40123@localhost:5432/task_manager JWT_SECRET=your_jwt_secret_here
+ini
+Copy
+Edit
+REACT_APP_API_URL=http://localhost:5000
+Run the Frontend
 
+bash
+Copy
+Edit
+npm start
+🛠️ Backend (Node.js + Express + PostgreSQL + TypeScript)
+Features
+JWT Authentication (Login & Registration)
+
+Task Management API (CRUD)
+
+PostgreSQL for data persistence
+
+Prerequisites
+Node.js (v14+ recommended)
+
+npm
+
+PostgreSQL (Ensure it's installed and running, and psql is available in your terminal)
+
+Setup Instructions
+Navigate to the Backend Folder
+
+bash
+Copy
+Edit
+cd project-root/backend
+Install Dependencies
+
+bash
+Copy
+Edit
+npm install
+Create .env File Create a .env file in the backend directory with the following:
+
+ini
+Copy
+Edit
+PORT=5000
+DATABASE_URL=postgres://postgres:your_password@localhost:5432/task_manager
+JWT_SECRET=your_jwt_secret_here
+Create the PostgreSQL Database
+
+bash
+Copy
+Edit
+psql -U postgres
+Once inside the psql shell:
+
+sql
+Copy
+Edit
+CREATE DATABASE task_manager;
+\q
+Run Migrations Run the following command to create the required tables:
+
+bash
+Copy
+Edit
+psql -U postgres -d task_manager -f path/to/migrations.sql
+Replace path/to/migrations.sql with the actual path to your migration file.
+
+Verify Tables
+
+bash
+Copy
+Edit
+psql -U postgres -d task_manager
+\dt
+\q
+Start the Backend Server
+
+bash
+Copy
+Edit
 npm run dev
+🚀 Project Demo
+Check out the live demo walkthrough here:
+📹 YouTube Video – Task Manager Demo
 
-Database Setup
-Create the Database:
+🧩 Folder Structure
+bash
+Copy
+Edit
+project-root/
+├── frontend/      # React + TypeScript frontend
+├── backend/       # Node.js + Express backend
+└── README.md      # Project documentation
+📌 Notes
+Ensure PostgreSQL is running before starting the backend server.
 
-Open a terminal and run:
+Use .env files to store sensitive configuration.
 
-psql -U postgres When prompted, enter your PostgreSQL password. Then, create the database by running:
-
-CREATE DATABASE task_manager; \q Run Migrations:
-
-A migration script (migrations.sql) is provided to create the required tables. Run the following command (adjust the path as necessary):
-
-psql -U postgres -d task_manager -f "C:\Users\harsh\Downloads\FULLSTACK PROJECT\project-root\backend\migrations.sql" This script should create tables such as users and tasks.
-
-Verify Tables:
-
-Connect to the database again:
-
-psql -U postgres -d task_manager And list tables:
-
-\dt You should see your tables listed (e.g., users and tasks). Then exit with \q.
+Customize JWT_SECRET and database credentials for production environments.
