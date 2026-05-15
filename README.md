@@ -371,13 +371,6 @@ Project demo walkthrough:
 ```text
 https://youtube.com/watch?v=WXXPRYRlVPY&si=JIQytMLqxDndV6ZX
 ```
-
-Example:
-
-```markdown
-[Watch Demo Video](https://your-demo-video-link.com)
-```
-
 ---
 
 ## Important Notes
